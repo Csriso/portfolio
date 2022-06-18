@@ -2,12 +2,18 @@ import React, { useEffect, useRef } from 'react'
 import './Home.css'
 import { gsap } from "gsap";
 import { CustomEase } from 'gsap/all';
+import TextPlugin from 'gsap/src/TextPlugin';
 
 export default function Home() {
+    // REFS
     const lineRef = useRef();
     const logoRef = useRef();
     const lineOneRef = useRef();
     const lineTwoRef = useRef();
+    const cesarRef = useRef();
+
+    gsap.registerPlugin(TextPlugin, CustomEase);
+
     useEffect(() => {
         launchAnimations();
     }, []);
@@ -23,8 +29,17 @@ export default function Home() {
         gsap.set(lineTwoRef.current, { transformOrigin: "100% 50%" });
         gsap.from(lineOneRef.current, { height: "0px", duration: 1, delay: 1 })
         gsap.from(lineTwoRef.current, { width: "0px", duration: 1, delay: 1.2 })
+        nameAnimation();
     }
-
+    const nameAnimation = () => {
+        cesarRef.current.innerText = "";
+        cesarRef.current.style.opacity = 1;
+        gsap.to(cesarRef.current, { duration: 60, onComplete: start, text: { value: "César Iriso" }, ease: "elastic" });
+        // gsap.to(cesarRef.current, { duration: 60, text: { value: "César Iriso" }, ease: "elastic" });
+    }
+    const start = () => {
+        console.log("complete");
+    }
 
     return (
         <div className='relative w-full h-full'>
@@ -34,13 +49,12 @@ export default function Home() {
             <div className='absolute top-0 left-0 w-full flex flex-row justify-center items-center place-items-center content-center bg-[#001D3D] h-full'>
                 <div className="flex flex-col justify-center items-center place-items-center content-center w-1/2">
                     <div className="title-container flex flex-col justify-center items-start place-items-start content-center">
-                        <h1 className='cesarTitle'>César Iriso</h1>
+                        <h1 className='cesarTitle' ref={cesarRef} style={{ opacity: 0 }}>César Iriso</h1>
                         <h2 className='subTitle pt-5 pl-2'>Full Stack Web Developer<span className='line-animation font-serif self-start place-self-start' ref={lineRef}>|</span></h2>
 
                     </div>
                 </div>
                 <div className="blob flex flex-row justify-center items-center place-items-center content-center w-1/2">
-                    {/* <img src='yellowblob.svg' alt="some file" height='680' width='789' /> */}
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" height="800" width="800" id="blobSvg" style={{ opacity: 1 }}>
                         <defs>
                             <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">

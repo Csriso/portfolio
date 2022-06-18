@@ -1,7 +1,6 @@
 /* César Iriso */
 
 .cesarTitle {
-  width: 477px;
   height: 158px;
   font-family: "Billion Dreams";
   font-style: normal;
@@ -43,4 +42,7 @@
   width: 1796px;
   height: 0px;
   border: 1px solid #ffd60a;
+}
+.title-container {
+  width: 520px;
 }
