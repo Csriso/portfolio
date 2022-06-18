@@ -1,0 +1,46 @@
+/* César Iriso */
+
+.cesarTitle {
+  width: 477px;
+  height: 158px;
+  font-family: "Billion Dreams";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 128px;
+  line-height: 189px;
+  color: #ffd60a;
+}
+.subTitle {
+  height: 66px;
+  font-family: "Billion Dreams";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 59px;
+  color: #ffd60a;
+}
+.lineOne,
+.lineTwo,
+.yellowLogo {
+  position: absolute;
+}
+.yellowLogo {
+  width: 49px;
+  height: 49px;
+  top: 47px;
+  left: 47px;
+}
+.lineOne {
+  height: 817px;
+  width: 0px;
+  bottom: 0px;
+  left: 71px;
+  border: 1px solid #ffd60a;
+}
+.lineTwo {
+  right: 0;
+  top: 71px;
+  width: 1796px;
+  height: 0px;
+  border: 1px solid #ffd60a;
+}
