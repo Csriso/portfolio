@@ -47,15 +47,15 @@ export default function Home() {
             <img src="yellowlog.png" alt="" srcSet="" className='yellow-logo z-10' ref={logoRef} />
             <span className='line-one z-10' ref={lineOneRef}></span>
             <span className='line-two z-10' ref={lineTwoRef}></span>
-            <div className='w-full flex flex-col lg:flex-row justify-center items-center place-items-center content-center bg-[#001D3D] h-full'>
-                <div className="flex flex-col justify-center lg:items-center items-center place-items-center content-center lg:w-1/2 w-full h-1/2">
+            <div className='w-full flex flex-col lg:flex-row justify-center items-center place-items-center content-center bg-[#001D3D] h-full gap-y-7 lg:gap-y-0'>
+                <div className="flex flex-col justify-center lg:items-center items-center place-items-center content-center lg:w-1/2 w-full ">
                     <div className="title-container flex flex-col justify-center lg:items-start items-center place-items-start content-center">
                         <h1 className='cesar-title lg:text-8xl text-7xl' ref={cesarRef} style={{ opacity: 0 }}>César Iriso</h1>
                         <h2 className='sub-title lg:text-5xl text-5xl'>Full Stack Web Developer<span className='line-animation font-serif self-start place-self-start' ref={lineRef}>|</span></h2>
 
                     </div>
                 </div>
-                <div className="blob flex flex-row justify-center items-center place-items-center content-center lg:w-1/2 w-full h-1/2 lg:h-3/4">
+                <div className="blob flex flex-row justify-center items-center place-items-center content-center lg:w-1/2 w-full h-1/2">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" height={"100%"} id="blobSvg" style={{ opacity: 1 }}>
                         <defs>
                             <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">

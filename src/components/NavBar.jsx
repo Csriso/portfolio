@@ -25,7 +25,7 @@ function NavBar() {
     }
 
     return (
-        <div className='bottom-links w-full absolute bottom-0 flex flex-row justify-around lg:text-4xl text-xl mb-5'>
+        <div className='bottom-links w-full absolute bottom-0 flex flex-row justify-around lg:text-4xl text-2xl mb-5'>
             <NavLink style={{ opacity: 0 }} ref={firstRef} to="/projects">projects</NavLink>
             <NavLink style={{ opacity: 0 }} ref={secondRef} to="/about">about</NavLink>
             <NavLink style={{ opacity: 0 }} ref={thirdRef} to="/contact">contact</NavLink>
