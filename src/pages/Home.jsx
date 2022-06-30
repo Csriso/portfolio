@@ -1,18 +1,19 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Home.css'
 import { gsap } from "gsap";
 import { CustomEase } from 'gsap/all';
 import TextPlugin from 'gsap/src/TextPlugin';
 import NavBar from '../components/NavBar';
+import { motion } from "framer-motion"
 
-export default function Home() {
+export default function Home({ isFirstMount }) {
     // REFS
     const lineRef = useRef();
     const logoRef = useRef();
     const lineOneRef = useRef();
     const lineTwoRef = useRef();
     const cesarRef = useRef();
-
+    const motionAnimation = useRef();
     gsap.registerPlugin(TextPlugin, CustomEase);
 
     useEffect(() => {
@@ -41,9 +42,98 @@ export default function Home() {
         gsap.to(cesarRef.current, { duration: 10, text: { value: "César Iriso", speed: 1 }, ease: "elastic" });
         console.log("complete");
     }
+    const blackBox = {
+        initial: {
+            height: "100%",
+            bottom: 0,
+        },
+        animate: {
+            height: 0,
+            transition: {
+                when: "afterChildren",
+                duration: 1.5,
+                ease: [0.87, 0, 0.13, 1],
+            },
+        },
+    };
+
+    const textContainer = {
+        initial: {
+            opacity: 1,
+        },
+        animate: {
+            opacity: 0,
+            transition: {
+                duration: 0.3,
+                when: "afterChildren",
+            },
+        },
+    };
+
+    const text = {
+        initial: {
+            y: 40,
+        },
+        animate: {
+            y: 80,
+            transition: {
+                duration: 1.5,
+                ease: [0.87, 0, 0.13, 1],
+            },
+        },
+    };
+
+    const InitialTransition = () => {
+        // Scroll user to top to avoid showing the footer
+        useState(() => {
+            typeof windows !== "undefined" && window.scrollTo(0, 0);
+        }, []);
+
+        return (
+            <motion.div
+                className="absolute z-50 flex items-center justify-center w-full bg-black"
+                initial="initial"
+                animate="animate"
+                variants={blackBox}
+                onAnimationStart={() => document.body.classList.add("overflow-hidden")}
+                onAnimationComplete={() => {
+                    document.body.classList.remove("overflow-hidden");
+                    motionAnimation.current.classList.add("hidden");
+                }
+                }
+                ref={motionAnimation}
+            >
+                <motion.svg variants={textContainer} className="absolute z-50 flex">
+                    <pattern
+                        id="pattern"
+                        patternUnits="userSpaceOnUse"
+                        width={750}
+                        height={800}
+                        className="text-[#ffd60a]"
+                    >
+                        <rect className="w-full h-full fill-current" />
+                        <motion.rect
+                            variants={text}
+                            className="w-full h-full text-gray-600 fill-current"
+                        />
+                    </pattern>
+                    <text
+                        className="text-6xl font-bold"
+                        textAnchor="middle"
+                        x="50%"
+                        y="50%"
+                        style={{ fill: "url(#pattern)" }}
+                    >
+                        César Iriso
+                    </text>
+                </motion.svg>
+            </motion.div>
+        );
+    };
 
     return (
-        <div className='relative w-full h-full'>
+        <motion.div className='relative w-full h-full' exit={{ opacity: 0 }}>
+            {isFirstMount && <InitialTransition />}
             <img src="yellowlog.png" alt="" srcSet="" className='yellow-logo z-10' ref={logoRef} />
             <span className='line-one z-10' ref={lineOneRef}></span>
             <span className='line-two z-10' ref={lineTwoRef}></span>
@@ -52,7 +142,6 @@ export default function Home() {
                     <div className="title-container flex flex-col justify-center lg:items-start items-center place-items-start content-center">
                         <h1 className='cesar-title lg:text-8xl text-7xl' ref={cesarRef} style={{ opacity: 0 }}>César Iriso</h1>
                         <h2 className='sub-title lg:text-5xl text-5xl'>Full Stack Web Developer<span className='line-animation font-serif self-start place-self-start' ref={lineRef}>|</span></h2>
-
                     </div>
                 </div>
                 <div className="blob flex flex-row justify-center items-center place-items-center content-center lg:w-1/2 w-full h-1/2">
@@ -74,6 +163,6 @@ export default function Home() {
                 </div>
             </div>
             <NavBar />
-        </div >
+        </motion.div>
     )
 }
