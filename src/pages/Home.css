@@ -36,7 +36,6 @@
   right: 0;
   width: calc(100% - 124px);
   top: 71px;
-  /* width: 1796px; */
   height: 0px;
   border: 1px solid #ffd60a;
 }
@@ -45,7 +44,7 @@
   color: #ffd60a;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1335px) {
   .line-one {
     display: none;
   }
