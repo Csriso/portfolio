@@ -1,48 +1,56 @@
 /* César Iriso */
 
-.cesarTitle {
-  height: 158px;
+.cesar-title {
   font-family: "Billion Dreams";
   font-style: normal;
   font-weight: 400;
-  font-size: 128px;
+  font-size: 6.6666666666667vw;
   line-height: 189px;
   color: #ffd60a;
 }
-.subTitle {
-  height: 66px;
+.sub-title {
   font-family: "Billion Dreams";
   font-style: normal;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 2.0833333333333vw;
   line-height: 59px;
   color: #ffd60a;
 }
-.lineOne,
-.lineTwo,
-.yellowLogo {
+.line-one,
+.line-two,
+.yellow-logo {
   position: absolute;
 }
-.yellowLogo {
+.yellow-logo {
   width: 49px;
   height: 49px;
   top: 47px;
   left: 47px;
 }
-.lineOne {
-  height: 817px;
+.line-one {
+  height: calc(100% - 124px);
   width: 0px;
   bottom: 0px;
   left: 71px;
   border: 1px solid #ffd60a;
 }
-.lineTwo {
+.line-two {
   right: 0;
+  width: calc(100% - 124px);
   top: 71px;
-  width: 1796px;
+  /* width: 1796px; */
   height: 0px;
   border: 1px solid #ffd60a;
 }
 .title-container {
   width: 520px;
+}
+.bottom-links {
+  color: #ffd60a;
+}
+
+@media all and (max-width: 1200px) {
+  .line-one {
+    display: none;
+  }
 }

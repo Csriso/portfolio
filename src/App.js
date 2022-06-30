@@ -7,10 +7,9 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App md:overflow-hidden">
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/error" element={<Error />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
