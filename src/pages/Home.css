@@ -5,7 +5,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 6.6666666666667vw;
-  line-height: 189px;
+  line-height: normal;
   color: #ffd60a;
 }
 .sub-title {
@@ -42,9 +42,7 @@
   height: 0px;
   border: 1px solid #ffd60a;
 }
-.title-container {
-  width: 520px;
-}
+
 .bottom-links {
   color: #ffd60a;
 }

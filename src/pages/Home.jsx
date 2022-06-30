@@ -28,17 +28,17 @@ export default function Home() {
         gsap.to(logoRef.current, { rotation: "+=360", duration: 2, yoyo: true, ease: "elastic", repeat: -1 });
         // gsap.set(lineOneRef.current, { transformOrigin: "50% 100%" });
         // gsap.set(lineTwoRef.current, { transformOrigin: "100% 50%" });
-        // gsap.from(lineOneRef.current, { height: "0px", duration: 1, delay: 1 })
-        // gsap.from(lineTwoRef.current, { width: "0px", duration: 1, delay: 1.2 })
+        gsap.from(lineOneRef.current, { alpha: "0", duration: 1, delay: 1 })
+        gsap.from(lineTwoRef.current, { alpha: "0", duration: 1, delay: 1.2 })
         nameAnimation();
     }
     const nameAnimation = () => {
         cesarRef.current.innerText = "";
         cesarRef.current.style.opacity = 1;
         gsap.to(cesarRef.current, { duration: 10, onComplete: start, text: { value: "César Iriso", speed: 1 }, ease: "elastic" });
-        // gsap.to(cesarRef.current, { duration: 60, text: { value: "César Iriso" }, ease: "elastic" });
     }
     const start = () => {
+        gsap.to(cesarRef.current, { duration: 10, text: { value: "César Iriso", speed: 1 }, ease: "elastic" });
         console.log("complete");
     }
 
@@ -47,16 +47,16 @@ export default function Home() {
             <img src="yellowlog.png" alt="" srcSet="" className='yellow-logo z-10' ref={logoRef} />
             <span className='line-one z-10' ref={lineOneRef}></span>
             <span className='line-two z-10' ref={lineTwoRef}></span>
-            <div className='w-full flex flex-col md:flex-row justify-center items-center place-items-center content-center bg-[#001D3D] h-full'>
-                <div className="flex flex-col justify-center items-center place-items-center content-center w-full md:w-1/2">
+            <div className='w-full flex flex-col flex-wrap lg:flex-row justify-center items-center place-items-center content-center bg-[#001D3D] h-full'>
+                <div className="flex flex-col justify-center lg:items-end items-center place-items-center content-center lg:w-1/2 w-full">
                     <div className="title-container flex flex-col justify-center md:items-start items-center place-items-start content-center">
-                        <h1 className='cesar-title' ref={cesarRef} style={{ opacity: 0 }}>César Iriso</h1>
-                        <h2 className='sub-title'>Full Stack Web Developer<span className='line-animation font-serif self-start place-self-start' ref={lineRef}>|</span></h2>
+                        <h1 className='cesar-title lg:text-4xl text-3xl' ref={cesarRef} style={{ opacity: 0 }}>César Iriso</h1>
+                        <h2 className='sub-title lg:text-4xl text-3xl'>Full Stack Web Developer<span className='line-animation font-serif self-start place-self-start' ref={lineRef}>|</span></h2>
 
                     </div>
                 </div>
-                <div className="blob flex flex-row justify-center items-center place-items-center content-center w-full md:w-1/2">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" height="800" width="800" id="blobSvg" style={{ opacity: 1 }}>
+                <div className="blob flex flex-row justify-center items-center place-items-center content-center lg:w-1/2 w-full">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="800" id="blobSvg" style={{ opacity: 1 }}>
                         <defs>
                             <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
                                 <stop offset="0%" style={{ "stopColor": "rgb(255, 214, 10)" }}></stop>
