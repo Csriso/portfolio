@@ -7,6 +7,9 @@ import NotFound from './pages/NotFound';
 import { AnimatePresence } from "framer-motion";
 import { useContext, useEffect, useState } from 'react';
 import { UtilityContext } from './context/util.context';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Projects from './pages/Projects';
 
 function App() {
   const [isFirstMount, setIsFirstMount] = useState(true);
@@ -25,9 +28,9 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home isFirstMount={isFirstMount} />} />
 
-          <Route path="/about" element={<Home />} />
-          <Route path="/contact" element={<Home />} />
-          <Route path="/projects" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects" element={<Projects />} />
 
           <Route path="/error" element={<Error />} />
           <Route path="*" element={<NotFound />} />

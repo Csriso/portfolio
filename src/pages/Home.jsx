@@ -17,7 +17,9 @@ export default function Home({ isFirstMount }) {
     gsap.registerPlugin(TextPlugin, CustomEase);
 
     useEffect(() => {
-        launchAnimations();
+        setTimeout(() => {
+            launchAnimations();
+        }, 1500)
     }, []);
 
     const launchAnimations = () => {
@@ -45,7 +47,7 @@ export default function Home({ isFirstMount }) {
     const blackBox = {
         initial: {
             height: "100%",
-            bottom: 0,
+            top: 0,
         },
         animate: {
             height: 0,
@@ -163,6 +165,6 @@ export default function Home({ isFirstMount }) {
                 </div>
             </div>
             <NavBar />
-        </motion.div>
+        </motion.div >
     )
 }
