@@ -21,9 +21,8 @@ function App() {
       setFirstEnter(false);
     }
   }, []);
-
   return (
-    <div className="App md:overflow-hidden">
+    <div className="App">
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home isFirstMount={isFirstMount} />} />

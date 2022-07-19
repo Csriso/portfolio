@@ -25,25 +25,25 @@ export default function Home({ isFirstMount }) {
     const launchAnimations = () => {
         gsap.to(lineRef.current,
             {
-                alpha: 0, duration: 0.4, repeat: -1, yoyo: true,
+                alpha: 0, duration: 0.7, repeat: -1, yoyo: true,
                 ease: CustomEase.create("custom", "M0,0,C0.498,0,0.356,0,0.5,0,0.492,0.506,0.5,0,0.5,1,1,1,0.891,1,1,1")
             })
-        gsap.to(logoRef.current, { rotation: "+=360", duration: 2, yoyo: true, ease: "elastic", repeat: -1 });
+        // gsap.to(logoRef.current, { rotation: "+=360", duration: 2, yoyo: true, ease: "elastic", repeat: -1 });
         // gsap.set(lineOneRef.current, { transformOrigin: "50% 100%" });
         // gsap.set(lineTwoRef.current, { transformOrigin: "100% 50%" });
-        gsap.from(lineOneRef.current, { alpha: "0", duration: 1, delay: 1 })
-        gsap.from(lineTwoRef.current, { alpha: "0", duration: 1, delay: 1.2 })
-        nameAnimation();
+        // gsap.from(lineOneRef.current, { alpha: "0", duration: 1, delay: 0 })
+        // gsap.from(lineTwoRef.current, { alpha: "0", duration: 1, delay: 0 })
+        // nameAnimation();
     }
-    const nameAnimation = () => {
-        cesarRef.current.innerText = "";
-        cesarRef.current.style.opacity = 1;
-        gsap.to(cesarRef.current, { duration: 10, onComplete: start, text: { value: "César Iriso", speed: 1 }, ease: "elastic" });
-    }
-    const start = () => {
-        gsap.to(cesarRef.current, { duration: 10, text: { value: "César Iriso", speed: 1 }, ease: "elastic" });
-        console.log("complete");
-    }
+    // const nameAnimation = () => {
+    //     cesarRef.current.innerText = "";
+    //     cesarRef.current.style.opacity = 1;
+    //     gsap.to(cesarRef.current, { duration: 10, onComplete: start, text: { value: "César Iriso", speed: 1 }, ease: "elastic" });
+    // }
+    // const start = () => {
+    //     gsap.to(cesarRef.current, { duration: 10, text: { value: "César Iriso", speed: 1 }, ease: "elastic" });
+    //     console.log("complete");
+    // }
     const blackBox = {
         initial: {
             height: "100%",
@@ -142,7 +142,7 @@ export default function Home({ isFirstMount }) {
             <div className='w-full flex flex-col lg:flex-row justify-center items-center place-items-center content-center bg-[#001D3D] h-full gap-y-7 lg:gap-y-0'>
                 <div className="flex flex-col justify-center lg:items-center items-center place-items-center content-center lg:w-1/2 w-full ">
                     <div className="title-container flex flex-col justify-center lg:items-start items-center place-items-start content-center">
-                        <h1 className='cesar-title lg:text-8xl text-7xl' ref={cesarRef} style={{ opacity: 0 }}>César Iriso</h1>
+                        <h1 className='cesar-title lg:text-8xl text-7xl' ref={cesarRef}>César Iriso</h1>
                         <h2 className='sub-title lg:text-5xl text-5xl'>Full Stack Web Developer<span className='line-animation font-serif self-start place-self-start' ref={lineRef}>|</span></h2>
                     </div>
                 </div>

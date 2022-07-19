@@ -5,25 +5,71 @@ import { motion } from "framer-motion"
 
 export default function Projects() {
     // REFS
+    const content = {
+        animate: {
+            transition: { staggerChildren: 0.1 },
+        },
+    };
 
-
+    const cards = {
+        initial: { y: -20, opacity: 0 },
+        animate: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.7,
+                ease: [0.6, -0.05, 0.01, 0.99],
+            },
+        },
+    };
 
     return (
-        <motion.div className='relative w-full h-full' exit={{ opacity: 0 }}>
+        <motion.div variants={content} animate="animate" initial="initial" class="w-full h-full">
             <a href="/"><img src="yellowlog.png" alt="" srcSet="" className='yellow-logo z-10' /></a>
-            {/* <span className='line-one z-10' ref={lineOneRef}></span>
-            <span className='line-two z-10' ref={lineTwoRef}></span> */}
-            <div className='w-full flex flex-col lg:flex-row justify-center items-center place-items-center content-center bg-[#001D3D] h-full gap-y-7 lg:gap-y-0'>
-                <div className="flex flex-col justify-center lg:items-center items-center place-items-center content-center lg:w-1/2 w-full ">
-                    {/* <div className="title-container flex flex-col justify-center lg:items-start items-center place-items-start content-center">
-                        <h1 className='cesar-title lg:text-8xl text-7xl' ref={cesarRef} style={{ opacity: 0 }}>César Iriso</h1>
-                        <h2 className='sub-title lg:text-5xl text-5xl'>Full Stack Web Developer<span className='line-animation font-serif self-start place-self-start' ref={lineRef}>|</span></h2>
-                    </div> */}
+            <motion.div variants={cards} class="flex flex-col md:flex-row flex-wrap gap-5 justify-center items-center place-items-center content-center w-full h-full font-serif">
+                <div class="flex w-1/4">
+                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                        <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
+                            <img class="rounded-t-lg" src="/ironminer2.png" alt="" />
+                        </a>
+                        <div class="p-6">
+                            <h5 class="text-gray-900 text-xl font-medium mb-2">IronMiner</h5>
+                            <p class="text-gray-700 text-base mb-4">
+                                Arcade minigame developed as first project of the Ironhack bootcamp
+                            </p>
+                            <a href='https://csriso.github.io/iron-miner/' class="hover:scale-110 transition duration-300 ease-in-out inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Visit</a>
+                        </div>
+                    </div>
                 </div>
-                <div className="blob flex flex-row justify-center items-center place-items-center content-center lg:w-1/2 w-full h-1/2">
-
+                <div class="flex  w-1/4">
+                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                        <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
+                            <img class="rounded-t-lg" src="/wordgym.png" alt="" />
+                        </a>
+                        <div class="p-6">
+                            <h5 class="text-gray-900 text-xl font-medium mb-2">WordGym</h5>
+                            <p class="text-gray-700 text-base mb-4">
+                                App with collections of words to train your english pronunciation
+                            </p>
+                            <a href='https://word-gym.herokuapp.com/' class="hover:scale-110 transition duration-300 ease-in-out inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Visit</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="flex  w-1/4">
+                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                        <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
+                            <img class="rounded-t-lg" src="/wevape.png" alt="" />
+                        </a>
+                        <div class="p-6">
+                            <h5 class="text-gray-900 text-xl font-medium mb-2">WeVape</h5>
+                            <p class="text-gray-700 text-base mb-4">
+                                Social network to share things related to vaping
+                            </p>
+                            <a href='https://wevape-ironhack.netlify.app/' class="hover:scale-110 transition duration-300 ease-in-out inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Visit</a>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
             <NavBar />
         </motion.div>
     )
