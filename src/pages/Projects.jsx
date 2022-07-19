@@ -26,8 +26,8 @@ export default function Projects() {
     return (
         <motion.div variants={content} animate="animate" initial="initial" class="w-full h-full">
             <a href="/"><img src="yellowlog.png" alt="" srcSet="" className='yellow-logo z-10' /></a>
-            <motion.div variants={cards} class="flex flex-col md:flex-row flex-wrap gap-5 justify-center items-center place-items-center content-center w-full h-full font-serif">
-                <div class="flex w-1/4">
+            <motion.div variants={cards} class="flex flex-col md:flex-row flex-wrap gap-5 justify-center items-center place-items-center content-center w-full h-full font-['Roboto']">
+                <div class="flex flex-row justify-center w-3/4 lg:w-1/4">
                     <div class="rounded-lg shadow-lg bg-white max-w-sm">
                         <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
                             <img class="rounded-t-lg" src="/ironminer2.png" alt="" />
@@ -37,11 +37,11 @@ export default function Projects() {
                             <p class="text-gray-700 text-base mb-4">
                                 Arcade minigame developed as first project of the Ironhack bootcamp
                             </p>
-                            <a href='https://csriso.github.io/iron-miner/' class="hover:scale-110 transition duration-300 ease-in-out inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Visit</a>
+                            <a href='https://csriso.github.io/iron-miner/' class="hover:scale-110 transition duration-300 ease-in-out inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg">Visit</a>
                         </div>
                     </div>
                 </div>
-                <div class="flex  w-1/4">
+                <div class="flex flex-row justify-center w-3/4 lg:w-1/4">
                     <div class="rounded-lg shadow-lg bg-white max-w-sm">
                         <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
                             <img class="rounded-t-lg" src="/wordgym.png" alt="" />
@@ -51,11 +51,11 @@ export default function Projects() {
                             <p class="text-gray-700 text-base mb-4">
                                 App with collections of words to train your english pronunciation
                             </p>
-                            <a href='https://word-gym.herokuapp.com/' class="hover:scale-110 transition duration-300 ease-in-out inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Visit</a>
+                            <a href='https://word-gym.herokuapp.com/' class="hover:scale-110 transition duration-300 ease-in-out inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg">Visit</a>
                         </div>
                     </div>
                 </div>
-                <div class="flex  w-1/4">
+                <div class="flex flex-row justify-center w-3/4 lg:w-1/4">
                     <div class="rounded-lg shadow-lg bg-white max-w-sm">
                         <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
                             <img class="rounded-t-lg" src="/wevape.png" alt="" />
@@ -65,7 +65,7 @@ export default function Projects() {
                             <p class="text-gray-700 text-base mb-4">
                                 Social network to share things related to vaping
                             </p>
-                            <a href='https://wevape-ironhack.netlify.app/' class="hover:scale-110 transition duration-300 ease-in-out inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Visit</a>
+                            <a href='https://wevape-ironhack.netlify.app/' class="hover:scale-110 transition duration-300 ease-in-out inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg">Visit</a>
                         </div>
                     </div>
                 </div>

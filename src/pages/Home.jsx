@@ -28,7 +28,7 @@ export default function Home({ isFirstMount }) {
                 alpha: 0, duration: 0.7, repeat: -1, yoyo: true,
                 ease: CustomEase.create("custom", "M0,0,C0.498,0,0.356,0,0.5,0,0.492,0.506,0.5,0,0.5,1,1,1,0.891,1,1,1")
             })
-        // gsap.to(logoRef.current, { rotation: "+=360", duration: 2, yoyo: true, ease: "elastic", repeat: -1 });
+        gsap.to(logoRef.current, { rotation: "+=360", duration: 2, yoyo: true, ease: "elastic", repeat: -1 });
         // gsap.set(lineOneRef.current, { transformOrigin: "50% 100%" });
         // gsap.set(lineTwoRef.current, { transformOrigin: "100% 50%" });
         // gsap.from(lineOneRef.current, { alpha: "0", duration: 1, delay: 0 })
