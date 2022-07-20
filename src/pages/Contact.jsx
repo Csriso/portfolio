@@ -34,12 +34,12 @@ export default function Contact() {
 
     const launchPlane = () => {
         planeDivRef.current.style.display = "flex";
-        formMotionDivRef.current.style.display = "none";
-        contactMeRef.current.style.display = "none";
-        gsap.to(planeDivRef.current, { duration: 5, delay: 0, x: window.innerWidth + 300, y: 100, onComplete: showTick })
-        gsap.to(planeDivRef.current, { duration: 5, delay: 0, rotate: "15deg", transformOrigin: "bottom left" })
+        gsap.to(planeDivRef.current, { duration: 3, delay: 0, x: window.innerWidth + 300, y: 100, onComplete: showTick })
+        gsap.to(planeDivRef.current, { duration: 3, delay: 0, rotate: "15deg", transformOrigin: "bottom left" })
     }
     const showTick = () => {
+        formMotionDivRef.current.style.display = "none";
+        contactMeRef.current.style.display = "none";
         planeDivRef.current.style.display = "none";
         checkMarkRef.current.style.display = "";
     }
@@ -99,18 +99,19 @@ export default function Contact() {
             </div>
 
             <a href="/"><img src="yellowlog.png" alt="" srcSet="" className='yellow-logo z-10' /></a>
-            <div className='w-full flex flex-col lg:flex-row justify-center items-center place-items-center content-center bg-[#001D3D] h-full gap-y-7 lg:gap-y-0'>
-                <div className="flex flex-col justify-center items-center place-items-center content-center w-full h-5/12 lg:h-full  pb-14 lg:pb-0">
+            <div className='w-full flex flex-col lg:flex-row justify-center items-center place-items-center content-center bg-[#001D3D] h-full gap-y-14 lg:gap-y-0'>
+                <div className="flex flex-col justify-center items-center place-items-center content-center w-full h-3/12 lg:h-5/12 lg:h-full">
                     <motion.div variants={social} className="mx-auto flex flex-col justify-center items-center place-items-center content-center w-full h-full">
                         <Social />
                     </motion.div>
                 </div>
-                <div className="flex flex-col justify-center items-center place-items-center content-center w-full h-7/12 lg:h-full" ref={formDivRef}>
+                <div className="flex flex-col justify-center items-center place-items-center content-center w-full h-9/12 lg:h-7/12 lg:h-full" ref={formDivRef}>
                     <svg style={{ display: "none" }} ref={checkMarkRef} className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
                         <circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
                         <path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
                     </svg>
-                    <motion.div variants={title} className="flex flex-col text-center w-full mb-4" ref={contactMeRef}>
+
+                    <motion.div variants={title} className="flex flex-col text-center w-full lg:mb-4" ref={contactMeRef}>
                         <h1 className='text-xl lg:text-5xl text-[#ffd60a]'>Contact me</h1>
                     </motion.div>
                     <motion.div variants={inputs} className="w-9/12 mx-auto" ref={formMotionDivRef}>
