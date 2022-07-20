@@ -26,7 +26,7 @@ export default function Projects() {
     return (
         <motion.div variants={content} animate="animate" initial="initial" class="w-full h-full">
             <a href="/"><img src="yellowlog.png" alt="" srcSet="" className='yellow-logo z-10' /></a>
-            <motion.div variants={cards} class="flex flex-col md:flex-row flex-wrap gap-5 justify-center items-center place-items-center content-center w-full h-full font-['Roboto']">
+            <motion.div variants={cards} class="flex flex-col py-32 lg:py-0 gap-y-10 lg:gap-y-0 lg:flex-row flex-wrap lg:gap-5 justify-center items-center place-items-center content-center w-full lg:h-full font-['Roboto']">
                 <div class="flex flex-row justify-center w-3/4 lg:w-1/4">
                     <div class="rounded-lg shadow-lg bg-white max-w-sm">
                         <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
