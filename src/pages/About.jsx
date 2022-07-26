@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 import FirstSection from '../components/about/FirstSection';
 import SecondSection from '../components/about/SecondSection';
 import ThirdSection from '../components/about/ThirdSection';
+import ForthSection from '../components/about/ForthSection';
 
 export default function About() {
     // REFS
@@ -33,11 +34,13 @@ export default function About() {
             <a href="/"><img src="yellowlog.png" alt="" srcSet="" className='yellow-logo z-10' /></a>
             {/* <span className='line-one z-10' ref={lineOneRef}></span>
             <span className='line-two z-10' ref={lineTwoRef}></span> */}
-            <div className='w-full flex flex-col justify-center zitems-center place-items-center content-center bg-[#001D3D] gap-y-7 lg:gap-y-0'>
+            <motion.div variants={inputs} className="mt-48 w-full flex flex-col justify-center zitems-center place-items-center content-center bg-[#001D3D] gap-y-7 lg:gap-y-0">
                 <FirstSection />
                 <SecondSection />
                 <ThirdSection />
-            </div >
+                <ForthSection />
+            </motion.div>
+
             <NavBar />
         </motion.div >
     )

@@ -1,16 +1,12 @@
-import { useAnimation, motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 const ThirdSection = ({ text }) => {
-
-
     return (
-
-        <div className="overflow-x-hidden w-full flex flex-row justify-center items-center content-center justify-items-center py-10">
+        <div className="overflow-x-hidden flex flex-row justify-center items-center content-center justify-items-center w-3/4">
             <div className="w-1/2">
-                <h3 className="text-5xl text-[#ffd60a]">Hard Skills</h3>
+                <img src="https://thumbs.dreamstime.com/b/serious-computer-programmer-developer-working-office-sitting-desk-coding-project-software-senior-development-187002522.jpg" alt="" srcset="" />
             </div>
             <div className="w-1/2">
-                <h3 className="text-5xl text-[#ffd60a]">Soft Skills</h3>
+                <h1>AQUI</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non error tempore molestiae voluptate maiores consectetur repudiandae unde amet facilis dicta. Impedit esse voluptatum blanditiis laborum totam velit consequatur vel id.</p>
             </div>
         </div>
     )
